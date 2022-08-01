@@ -30,8 +30,6 @@ package Arrays;
 **  3) Implement computeSnowpack() correctly.
 */
 
-import java.io.*;
-import java.util.*;
 
 class Solution {
     /*

@@ -3,6 +3,7 @@ Given an array of unique integers, return its powerset
 '''
 
 #using BFS solution
+from array import array
 from collections import deque
 def powerset(array):
     data = deque()
@@ -23,7 +24,8 @@ def powerset(array):
 
 #using DFS solution
 #the solution is to pick one element, and then once include it in the o/p and next time not inclue it in o/p and move to seconf element
-def powerset(array):
+#backtracking
+def powerset2(array):
     ans = []
     ans.append([])
     powerset_rec(array, 0, [], ans)
@@ -44,12 +46,20 @@ def powerset_rec(array, i, curr_op, ans) :
 	curr_op.pop()
 	powerset_rec(array, i+1, curr_op, ans)
 
+
+
 #algoexpert solution
 #O(n * 2^n)
-def powerset(array):
+def powerset_algo(array):
     ans = [[]]
     for i in array :
         for j in range(len(ans)) :
             curr = ans[j]
             curr.append(curr + [i])
     return ans
+
+
+def test() :
+    print(powerset2([1,2,2]))
+
+test()
