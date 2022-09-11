@@ -1,6 +1,6 @@
 '''
 Given an sorted array and an integer, check if integer is present in arary.
-Here caveat is that 
+Here caveat is that array is rotated. Elements have been moved to left or right by one or more position.
 '''
 
 #this is using recusrion so space is being used as stack memory.
