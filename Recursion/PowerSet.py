@@ -1,11 +1,11 @@
 '''
-Given an array of unique integers, return its powerset
+Given an array of unique integers, return its set
 '''
 
 #using BFS solution
 from array import array
 from collections import deque
-def powerset(array):
+def set(array):
     data = deque()
     data.append([])
     res = []
@@ -17,7 +17,7 @@ def powerset(array):
             temp = list(elem)
             temp.append(k)
             data.append(temp)
-        i+=1
+        #i+=1
     return list(data)
 
 
@@ -25,13 +25,13 @@ def powerset(array):
 #using DFS solution
 #the solution is to pick one element, and then once include it in the o/p and next time not inclue it in o/p and move to seconf element
 #backtracking
-def powerset2(array):
+def set2(array):
     ans = []
     ans.append([])
-    powerset_rec(array, 0, [], ans)
+    set_rec(array, 0, [], ans)
     return ans
 
-def powerset_rec(array, i, curr_op, ans) :
+def set_rec(array, i, curr_op, ans) :
 	if i == len(array) :
 		return
     
@@ -40,17 +40,17 @@ def powerset_rec(array, i, curr_op, ans) :
 	ans.append(list(curr_op))
 
     #moving to next element
-	powerset_rec(array, i+1, curr_op, ans)
+	set_rec(array, i+1, curr_op, ans)
 
     #not including current element in o/p and moving to next element
 	curr_op.pop()
-	powerset_rec(array, i+1, curr_op, ans)
+	set_rec(array, i+1, curr_op, ans)
 
 
 
 #algoexpert solution
 #O(n * 2^n)
-def powerset_algo(array):
+def set_algo(array):
     ans = [[]]
     for i in array :
         for j in range(len(ans)) :
@@ -60,6 +60,6 @@ def powerset_algo(array):
 
 
 def test() :
-    print(powerset2([1,2,2]))
+    print(set([1,2,3]))
 
 test()
