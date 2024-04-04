@@ -31,7 +31,7 @@ def NQeensSolver(arr, n, i, j, placedQueens, ans) :
         i += 1 #moving to next row
         j = 0 #resetting col to 0
     
-    if i == n : # out of rows
+    if i == n : # out of rows 
         return 
     safe = safeToPlace(arr, i, j)
     if safe :
