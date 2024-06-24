@@ -31,7 +31,7 @@ class Codec:
                 if e :
                     data.append(e.left)
                     data.append(e.right)
-        res = "-".join(ans)
+        res = ",".join(ans)
         return res
 
         
@@ -44,7 +44,7 @@ class Codec:
         """
         if not data :
             return None
-        data = data.split('-')
+        data = data.split(',')
         head= TreeNode(int(data[0]))
         arr = deque([head])
         i = 1
